@@ -12,9 +12,9 @@ if not ACCESS_TOKEN:
     raise ValueError("DROPBOX_ACCESS_TOKEN environment variable is not set.")
 
 # 업로드할 폴더 경로
-LOCAL_FOLDER = '/path/to/your/local/folder'
+LOCAL_FOLDER = "C:/Users/ekfri/AppData/Roaming/7DaysToDie/Saves/Pregen10k1"
 # Dropbox에서의 경로 (업로드할 위치)
-DROPBOX_FOLDER = '/folder/in/dropbox'
+DROPBOX_FOLDER = '/server'
 
 def upload_files(local_folder, dropbox_folder):
     dbx = dropbox.Dropbox(ACCESS_TOKEN)
@@ -23,7 +23,7 @@ def upload_files(local_folder, dropbox_folder):
         for file_name in files:
             local_path = os.path.join(root, file_name)
             relative_path = os.path.relpath(local_path, local_folder)
-            dropbox_path = os.path.join(dropbox_folder, relative_path).replace("\\", "/")
+            dropbox_path = os.path.join(dropbox_folder, relative_path).replace("//", "/")
 
             with open(local_path, 'rb') as f:
                 print(f"Uploading {local_path} to {dropbox_path}...")
