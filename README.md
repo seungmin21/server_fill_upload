@@ -1,9 +1,9 @@
-###설치 명령어
+### 설치 명령어
 pip install dotenv
 pip install dropbox
 python -m venv .venv
 
-###스크립트 용도
+### 스크립트 용도
 수동으로 클라우드에 업로드 하는 행동의 단계를 줄이고자 기획
 
 초반에 업데이트를 감지해서 업로드하는 코드를 작성했으나
